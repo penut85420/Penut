@@ -32,7 +32,7 @@ def dump_csv(obj, fpath, header=False, index=False):
 def load_csv(fpath, header=None):
     pd.read_csv(fpath, header=header)
 
-def load(fpath):
+def load(fpath, **kwargs):
     load_dict = {
         '.json': load_json,
         '.pkl': load_pkl,
@@ -42,7 +42,7 @@ def load(fpath):
     _, ext = os.path.splitext(fpath)
     return load_dict[ext](fpath)
 
-def dump(obj, fpath):
+def dump(obj, fpath, **kwargs):
     dump_dict = {
         '.json': dump_json,
         '.pkl': dump_pkl,
@@ -50,13 +50,14 @@ def dump(obj, fpath):
         '.csv': dump_csv
     }
     _, ext = os.path.splitext(fpath)
-    return dump_dict[ext](obj, fpath)
+    return dump_dict[ext](obj, fpath, **kwargs)
 
 def mkdir(dir_path):
     os.makedirs(dir_path, exist_ok=True)
 
 if __name__ == "__main__":
-    d = {'Name': 'Testing', 'Arr': [1, 2, 3]}
+    d = {'Name': 'Testing', 'Arr': [1, 2, 3], '測試': '項目'}
+    dump(d, 'a.json', is_ascii=True)
     # dump_json(d, './a.json')
     # dd = load_json('./a.json')
     # assert d == dd
@@ -65,16 +66,16 @@ if __name__ == "__main__":
     # dd = load_pkl('./a.pkl')
     # assert d == dd
 
-    dump(d, 'a.json')
-    dump(d, 'a.pkl')
-    dump(d, 'a.csv')
-    a = load('a.json')
-    b = load('a.pkl')
-    c = load('a.csv')
-    assert a == b
+    # dump(d, 'a.json')
+    # dump(d, 'a.pkl')
+    # dump(d, 'a.csv')
+    # a = load('a.json')
+    # b = load('a.pkl')
+    # c = load('a.csv')
+    # assert a == b
 
-    print('Success!')
+    # print('Success!')
 
     os.remove('a.json')
-    os.remove('a.pkl')
-    os.remove('a.csv')
+    # os.remove('a.pkl')
+    # os.remove('a.csv')
