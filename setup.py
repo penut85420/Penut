@@ -1,8 +1,8 @@
 import setuptools
 
 setuptools.setup(
-    name="penut-utils",
-    version="0.0.3",
+    name="penut",
+    version="0.0.1",
     author="PenutChen",
     author_email="penut85420@gmail.com",
     description="This is a collection of my useful functions.",
