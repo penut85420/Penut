@@ -1,16 +1,7 @@
 # Penut
 
 ## Introduction
-+ [GitHub](https://github.com/penut85420/penut)  
-[![GitHub release](https://img.shields.io/github/v/release/penut85420/penut.svg)](https://github.com/penut85420/penut/releases)
-[![GitHub release date](https://img.shields.io/github/release-date/penut85420/penut.svg)](https://github.com/penut85420/penut/releases)
-[![GitHub issues](https://img.shields.io/github/issues/penut85420/penut.svg)](https://github.com/penut85420/penut/issues)
-+ PyPI  
-[![PyPI version](https://img.shields.io/pypi/v/penut.svg?maxAge=3600)](https://pypi.org/project/penut)
-[![PyPI license](https://img.shields.io/pypi/l/penut.svg?maxAge=3600)](https://github.com/ckiplab/penut/blob/master/LICENSE)
-[![PyPI python](https://img.shields.io/pypi/pyversions/penut.svg?maxAge=3600)](https://pypi.org/project/penut)
-+ This package is a collection of my useful functions.
-+ Including useful IO operation and NLP utils.
++ This package is a collection of my useful functions, including some useful IO operations.
 
 ## Installation
 + You can install this package through pip:
@@ -33,7 +24,7 @@
   pio.dump(data, './data.csv')
   pio.dump(data, './data.npy')
   ```
-+ You can easily measure the execute time of code:
++ You can easily measure the execution time of code:
   ```python
   from penut.uitls import TimeCost
 
