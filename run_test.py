@@ -96,8 +96,8 @@ class PenutTest(unittest.TestCase):
     def test_td2s(self):
         from penut import td2s
         import datetime as dt
-        a = dt.datetime(2021, 1, 6, 11, 32, 23)
-        b = dt.datetime(2021, 1, 7, 12, 38, 17)
+        a = dt.datetime(2021, 1, 6, 0, 0, 0)
+        b = dt.datetime(2021, 1, 6, 1, 2, 3)
         d = b - a
         print(td2s(d))
         fmt = lambda h, m, s: f'{h} 小時 {m} 分 {s} 秒'
