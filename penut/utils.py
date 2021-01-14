@@ -17,7 +17,7 @@ def timedelta2string(delta, fmt=None):
         fmt = lambda h, m, s: f'{h:02d}:{m:02d}:{s:02d}'
     total_seconds = delta.total_seconds()
     minutes, seconds = divmod(total_seconds, 60)
-    hours, minutes = divmod(minutes, 24)
+    hours, minutes = divmod(minutes, 60)
     hours, minutes, seconds = map(int, (hours, minutes, seconds))
     return fmt(hours, minutes, seconds)
 
